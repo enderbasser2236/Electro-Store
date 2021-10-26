@@ -1,11 +1,15 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import "../App.css";
+
+
+
 
 function NavBar() {
   return (
-    <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-theme">
   <div className="container-fluid">
     <a className="navbar-brand" href="#home">Navbar</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +40,7 @@ function NavBar() {
     </div>
   </div>
 </nav>
-    </div>
+    </>
   );
 }
 
