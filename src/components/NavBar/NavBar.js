@@ -1,6 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
-import '../App.css';
+import React from 'react';
+import NavCart from '../NavCart/NavCart.js';
+import '../NavBar/NavBar.css';
 
 function NavBar() {
   return (
@@ -8,7 +8,7 @@ function NavBar() {
       <nav className='navbar navbar-expand-lg navbar-dark bg-theme'>
         <div className='container-fluid'>
           <a className='navbar-brand' href='#home'>
-            Navbar
+            Electro-Store
           </a>
           <button
             className='navbar-toggler'
@@ -20,8 +20,8 @@ function NavBar() {
             aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon'></span>
           </button>
-          <div className='collapse navbar-collapse' id='navbarNavDropdown'>
-            <ul className='navbar-nav'>
+          <div className='collapse navbar-collapse test' id='navbarNavDropdown'>
+            <ul className='navbar-nav me-auto'>
               <li className='nav-item'>
                 <a className='nav-link active' aria-current='page' href='#home'>
                   Home
@@ -68,6 +68,7 @@ function NavBar() {
                 </ul>
               </li>
             </ul>
+            <NavCart />
           </div>
         </div>
       </nav>

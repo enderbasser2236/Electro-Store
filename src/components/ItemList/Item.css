@@ -1,0 +1,15 @@
+.ulItemList {
+    text-align: center;
+    padding: 20px;
+}
+
+.ulItemList div {
+    display: inline-block;
+    padding: 30px;
+    text-align: center;
+}
+
+.itemList {
+    color: white;
+    text-decoration: none;
+}
