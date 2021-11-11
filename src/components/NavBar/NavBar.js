@@ -68,7 +68,7 @@ function NavBar() {
                 </ul>
               </li>
             </ul>
-            <NavCart />
+            <NavCart initial={0} />
           </div>
         </div>
       </nav>

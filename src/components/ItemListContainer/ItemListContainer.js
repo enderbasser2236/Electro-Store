@@ -1,9 +1,9 @@
 import React from 'react';
-import '../ItemList/Item.css';
+import '../ItemListContainer/ItemListContainer.css';
 
 const ItemList = (item) => {
   return (
-    <div className='divItemList'>
+    <div className='divItemList ulItemList'>
       <a href={item.url} className='itemList btn btn-primary'>
         {item.texto}
       </a>

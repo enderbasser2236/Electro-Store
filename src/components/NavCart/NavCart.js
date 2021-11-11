@@ -2,11 +2,13 @@ import React from 'react';
 import { FaOpencart } from 'react-icons/fa';
 import '../NavCart/NavCart.css';
 
-const NavCart = () => {
+export const shoppingCart = [];
+
+const NavCart = (initial) => {
   return (
     <div className='shoppingCart'>
       <FaOpencart />
-      <span>01</span>
+      <span>0</span>
     </div>
   );
 };
