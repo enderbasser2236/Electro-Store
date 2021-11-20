@@ -4,6 +4,7 @@ import '../ItemListContainer/ItemListContainer.css';
 import ItemList from '../itemlist/ItemList';
 import { useEffect, useState } from 'react';
 import stockItems from '../stock/stock';
+import ItemsCharging from '../Items/ItemsCharging';
 
 const is_ok = true;
 
@@ -20,12 +21,13 @@ let itemRendering = (task, time) => {
 };
 
 const ItemListContainer = (item) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    itemRendering(stockItems, 5000).then(() => {
-      setData(data);
+    itemRendering(console.log('starting rendering'), 3000).then(() => {
+      itemRendering(setData(stockItems), 3000);
     });
+    console.log(data);
   });
 
   return (
@@ -36,7 +38,9 @@ const ItemListContainer = (item) => {
         </a>
       </div>
       <ItemCounter initial={0} stock={10} />
-      <ItemList itemRender={data} />
+
+      {data.length === 0 ? <ItemsCharging /> : <ItemList itemRender={data} />}
+      {/* <ItemList itemRender={stockItems} /> */}
     </>
   );
 };
