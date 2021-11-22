@@ -1,12 +1,12 @@
 import React from 'react';
-import Items from '../Items/Items';
+import ItemsListRendering from '../Items/ItemsListRendering';
 
-const ItemList = (props) => {
-  const stockList = props.itemRender.map((prod) => (
-    <Items key={prod.id} prod={prod} />
+const ItemList = ({ itemRender }) => {
+  const stockList = itemRender.map((prod) => (
+    <ItemsListRendering key={prod.id} prod={prod} />
   ));
 
-  return <div className='row'>{stockList}</div>;
+  return <ol className='itemListRendering'>{stockList}</ol>;
 };
 
 export default ItemList;

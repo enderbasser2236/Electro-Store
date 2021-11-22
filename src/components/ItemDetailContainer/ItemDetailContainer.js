@@ -1,6 +1,6 @@
 import React from 'react';
 import '../ItemListContainer/ItemListContainer.css';
-import ItemList from '../itemlist/ItemList';
+import ItemDetails from '../ItemDetail/ItemDetails';
 import { useEffect, useState } from 'react';
 import stockItems from '../stock/stock';
 import itemRendering from '../promesa/promesa';
@@ -18,16 +18,10 @@ const ItemListContainer = (item) => {
 
   return (
     <>
-      <div className='divItemList ulItemList'>
-        <a href={item.url} className='itemList btn btn-primary'>
-          {item.texto}
-        </a>
-      </div>
-
       {data.length === 0 ? (
         <h1 className='charging'>Charging items...</h1>
       ) : (
-        <ItemList itemRender={data} />
+        <ItemDetails itemRender={data} />
       )}
     </>
   );

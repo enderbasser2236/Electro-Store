@@ -13,3 +13,17 @@
     color: white;
     text-decoration: none;
 }
+
+.itemContainer {
+    padding-top: 30px;
+}
+
+.charging {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.itemListRendering {
+    padding-left: 45%;
+    padding-top: 50px;
+}

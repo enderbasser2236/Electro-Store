@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import '../ItemCounter/ItemCounter.css';
 
 const ItemCounter = ({ stock, initial }) => {
@@ -26,8 +25,8 @@ const ItemCounter = ({ stock, initial }) => {
   return (
     <>
       <div className='ItemCounter'>
-        <h1>Item Counter app</h1>
-        <h2>{counter}</h2>
+        <h3>Item Counter app</h3>
+        <h4>{counter}</h4>
 
         <button className='btn btn-primary' onClick={disminuirStock}>
           -1
@@ -46,10 +45,6 @@ const ItemCounter = ({ stock, initial }) => {
       </div>
     </>
   );
-};
-
-ItemCounter.propTypes = {
-  initial: PropTypes.number.isRequired,
 };
 
 export default ItemCounter;
