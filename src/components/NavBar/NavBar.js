@@ -1,15 +1,18 @@
 import React from 'react';
 import NavCart from '../NavCart/NavCart.js';
 import '../NavBar/NavBar.css';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
     <>
       <nav className='navbar navbar-expand-lg navbar-dark bg-theme'>
         <div className='container-fluid'>
-          <a className='navbar-brand' href='#home'>
-            Electro-Store
-          </a>
+          <Link to='/' className='logo'>
+            <p>
+              <strong>Electro-Store</strong>
+            </p>
+          </Link>
           <button
             className='navbar-toggler'
             type='button'
@@ -23,18 +26,13 @@ function NavBar() {
           <div className='collapse navbar-collapse test' id='navbarNavDropdown'>
             <ul className='navbar-nav me-auto'>
               <li className='nav-item'>
-                <a className='nav-link active' aria-current='page' href='#home'>
-                  Home
+                <a className='nav-link' href='#home'>
+                  Registrate
                 </a>
               </li>
               <li className='nav-item'>
                 <a className='nav-link' href='#home'>
-                  Features
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='#home'>
-                  Pricing
+                  Inicia Sesion
                 </a>
               </li>
               <li className='nav-item dropdown'>
@@ -45,25 +43,38 @@ function NavBar() {
                   role='button'
                   data-bs-toggle='dropdown'
                   aria-expanded='false'>
-                  Dropdown link
+                  Categorias
                 </a>
                 <ul
                   className='dropdown-menu'
                   aria-labelledby='navbarDropdownMenuLink'>
                   <li>
-                    <a className='dropdown-item' href='#home'>
-                      Action
-                    </a>
+                    <Link to='/category/1' className='links'>
+                      <p className='dropdown-item' href='#home'>
+                        Procesadores
+                      </p>
+                    </Link>
                   </li>
                   <li>
-                    <a className='dropdown-item' href='#home'>
-                      Another action
-                    </a>
+                    <Link to='/category/2' className='links'>
+                      <p className='dropdown-item' href='#home'>
+                        Tarjetas Madre
+                      </p>
+                    </Link>
                   </li>
                   <li>
-                    <a className='dropdown-item' href='#home'>
-                      Something else here
-                    </a>
+                    <Link to='/category/3' className='links'>
+                      <p className='dropdown-item' href='#home'>
+                        Memorias
+                      </p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/category/4' className='links'>
+                      <p className='dropdown-item' href='#home'>
+                        Discos Duros
+                      </p>
+                    </Link>
                   </li>
                 </ul>
               </li>

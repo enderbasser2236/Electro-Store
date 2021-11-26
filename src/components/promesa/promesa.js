@@ -1,14 +1,14 @@
 const is_ok = true;
 
-let itemRendering = (task) => {
+let itemRendering = (task, time) => {
   return new Promise((resolve, reject) => {
-    if (is_ok) {
-      setTimeout(() => {
+    setTimeout(() => {
+      if (is_ok) {
         resolve(task);
-      }, 3000);
-    } else {
-      reject('error');
-    }
+      } else {
+        reject('error Garrafal');
+      }
+    }, time);
   });
 };
 

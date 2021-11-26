@@ -2,23 +2,28 @@ import React from 'react';
 import ItemCounter from '../ItemCounter/ItemCounter';
 const ItemDetailsRendering = ({ prod }) => {
   return (
-    <div className='col-sm-4' style={{ padding: '20px' }}>
-      <div className='card' style={{ width: '20rem' }}>
-        <img
-          src={prod.img}
-          className='card-img-top'
-          alt={prod.descripcion}></img>
-        <div className='card-body'>
-          <h5 className='card-title'>{prod.descripcion}</h5>
+    <>
+      <div className='itemDetailSizeLeft'>
+        <img src={prod.img} alt={prod.descripcion}></img>
+      </div>
+      <div className='itemDetailSizeRight'>
+        <div>
+          <h5>{prod.descripcion}</h5>
         </div>
-        <ul className='list-group list-group-flush'>
-          <li className='list-group-item'>Marca: {prod.marca}</li>
-          <li className='list-group-item'>Modelo: {prod.modelo}</li>
-          <li className='list-group-item'>Precio: {prod.precio}</li>
+        <ul className='list-group-flush'>
+          <li className='list-group-item'>
+            <strong>Marca: {prod.marca}</strong>
+          </li>
+          <li className='list-group-item'>
+            <strong>Modelo: {prod.modelo}</strong>
+          </li>
+          <li className='list-group-item'>
+            <strong>Precio: {prod.precio}</strong>
+          </li>
           <ItemCounter initial={0} stock={10} />
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

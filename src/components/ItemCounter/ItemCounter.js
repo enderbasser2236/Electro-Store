@@ -25,7 +25,6 @@ const ItemCounter = ({ stock, initial }) => {
   return (
     <>
       <div className='ItemCounter'>
-        <h3>Item Counter app</h3>
         <h4>{counter}</h4>
 
         <button className='btn btn-primary' onClick={disminuirStock}>
