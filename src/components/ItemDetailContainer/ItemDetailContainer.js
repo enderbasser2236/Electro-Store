@@ -19,7 +19,7 @@ const ItemListContainer = () => {
         setData(result);
       })
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   return <ItemDetails itemRender={data} />;
 };
