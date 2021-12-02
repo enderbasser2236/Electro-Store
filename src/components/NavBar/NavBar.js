@@ -79,7 +79,9 @@ function NavBar() {
                 </ul>
               </li>
             </ul>
-            <NavCart initial={0} />
+            <Link to='/cart'>
+              <NavCart />
+            </Link>
           </div>
         </div>
       </nav>

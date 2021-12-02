@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+
 import '../ItemCounter/ItemCounter.css';
 
-const ItemCounter = ({ stock, initial }) => {
+const ItemCounter = ({ stock, initial, onAdd }) => {
   const [counter, setCounter] = useState(initial);
 
   const disminuirStock = () => {
@@ -16,10 +17,6 @@ const ItemCounter = ({ stock, initial }) => {
 
   const resetStock = () => {
     setCounter(initial);
-  };
-
-  const addToCart = () => {
-    console.log('i am under construcction right now');
   };
 
   return (
@@ -37,7 +34,7 @@ const ItemCounter = ({ stock, initial }) => {
           +1
         </button>
         <div>
-          <button className='btn btn-primary' onClick={addToCart}>
+          <button className='btn btn-primary' onClick={() => onAdd(counter)}>
             Agregar al Carrito
           </button>
         </div>

@@ -6,6 +6,7 @@ const NavCart = () => {
   return (
     <div className='shoppingCart'>
       <FaOpencart />
+
       <span>1</span>
     </div>
   );
