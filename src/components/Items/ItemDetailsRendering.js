@@ -9,11 +9,9 @@ const ItemDetailsRendering = ({ item }) => {
   const context = useContext(CartContext);
 
   const onAdd = (qty) => {
-    alert('se han agregado ' + qty + ' items al carrito con exito');
+    alert('agregando ' + qty + ' items al carrito');
     setCounterData(qty);
     context.addToCart(item, qty);
-    console.log(item);
-    console.log(qty);
   };
 
   return (
