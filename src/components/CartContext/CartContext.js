@@ -15,12 +15,7 @@ const CartContextProvider = ({ children }) => {
   };
 
   const addToCart = (item, qty) => {
-    let newItem = item;
-    let itemInCart = carlist.find((item) => item.idProd === newItem.id);
-    console.log(newItem);
-    console.log(itemInCart);
-    console.log(carlist);
-
+    const itemInCart = carlist.find((prod) => prod.idProd === item.id);
     if (itemInCart === undefined) {
       setCarlist([
         ...carlist,
@@ -34,9 +29,11 @@ const CartContextProvider = ({ children }) => {
           qtyProd: qty,
         },
       ]);
-    } else if (itemInCart.idprod === newItem.id) {
-      alert('ya se encuentra el item en el carrito');
-      console.log('porque no sirve?');
+    } else {
+      alert(
+        'el producto se encuentra en el carrito se sumara a la cantidad actual'
+      );
+      itemInCart.qtyProd += qty;
     }
   };
 
