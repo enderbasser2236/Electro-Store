@@ -3,6 +3,8 @@ import { CartContext } from '../CartContext/CartContext';
 import { useContext } from 'react';
 import '../Cart/Cart.css';
 import CartRendering from './CartRendering';
+import { Link } from 'react-router-dom';
+import OrderSumary from './OrderSumary';
 
 const Cart = () => {
   const context = useContext(CartContext);
@@ -11,19 +13,32 @@ const Cart = () => {
     <CartRendering key={items.idProd} items={items} />
   ));
 
-  return (
+  return cartItems.length > 0 ? (
     <>
       <div className='cartDiv'>
         <ol>{cartRendering}</ol>
       </div>
+      <OrderSumary />
+
       <div className='cartClear'>
         <button
-          className='btn btn-success'
+          className='btn btn-danger'
           onClick={() => {
             context.clearCart();
           }}>
-          Vaciar
+          Vaciar Carrito
         </button>
+      </div>
+    </>
+  ) : (
+    <>
+      <h1 className='emptyCart'>Su carrito esta vacio</h1>
+      <div className='emptyCartButton'>
+        <Link to='/'>
+          <button className=' btn btn-outline-primary'>
+            Regresar al inicio
+          </button>
+        </Link>
       </div>
     </>
   );

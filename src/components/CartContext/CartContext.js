@@ -5,6 +5,14 @@ export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
   const [carlist, setCarlist] = useState([]);
 
+  const totalItemsCart = () => {
+    let qtys = carlist.map((item) => item.qtyProd);
+    return qtys.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      0
+    );
+  };
+
   const deleteItem = (itemId) => {
     let refreshCart = carlist.filter((item) => itemId !== item.idProd);
     setCarlist(refreshCart);
@@ -12,6 +20,19 @@ const CartContextProvider = ({ children }) => {
 
   const clearCart = () => {
     setCarlist([]);
+  };
+
+  const calcTotalPerItem = (itemId) => {
+    let index = carlist.map((item) => item.idProd).indexOf(itemId);
+
+    return carlist[index].priceProd * carlist[index].qtyProd;
+  };
+
+  const calcTotal = () => {
+    let totalPerItem = carlist.map((item) => calcTotalPerItem(item.idProd));
+    return totalPerItem.reduce(
+      (accumulator, currentValue) => accumulator + currentValue
+    );
   };
 
   const addToCart = (item, qty) => {
@@ -34,6 +55,7 @@ const CartContextProvider = ({ children }) => {
         'el producto se encuentra en el carrito se sumara a la cantidad actual'
       );
       itemInCart.qtyProd += qty;
+      setCarlist([...carlist]);
     }
   };
 
@@ -45,6 +67,9 @@ const CartContextProvider = ({ children }) => {
           addToCart,
           clearCart,
           deleteItem,
+          totalItemsCart,
+          calcTotalPerItem,
+          calcTotal,
         }}>
         {children}
       </CartContext.Provider>

@@ -1,8 +1,8 @@
 import React from 'react';
 import ItemDetailsRendering from '../Items/ItemDetailsRendering';
 
-const ItemList = ({ itemRender }) => {
+const ItemDetails = ({ itemRender }) => {
   return <ItemDetailsRendering item={itemRender} />;
 };
 
-export default ItemList;
+export default ItemDetails;

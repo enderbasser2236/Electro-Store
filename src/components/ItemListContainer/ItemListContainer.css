@@ -33,28 +33,3 @@
     width: 318px;
     height: 318px;
 }
-
-.itemDetailSize {
-    width: 100%;
-    text-align: center;
-}
-
-.itemDetailSizeLeft {
-    width: 50%;
-    display: inline-block;
-}
-
-.itemDetailSizeLeft img {
-    width: 400px;
-    height: 400px;
-    margin-bottom: 150px;
-    margin-left: 150px;
-
-}
-
-.itemDetailSizeRight {
-    padding-top: 50px;
-    width: 50%;
-    display: inline-block;
-    text-align: center;
-}
