@@ -37,3 +37,7 @@
 .container:hover .overlay {
     opacity: 1;
 }
+
+.endBuy {
+    margin-top: 100px;
+}

@@ -1,9 +1,22 @@
 import { createContext, useState } from 'react';
+import Swal from 'sweetalert2';
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
   const [carlist, setCarlist] = useState([]);
+
+  const alreadyExist = () => {
+    Swal.fire({
+      text: 'el producto se encuentra en el carrito se sumara a la cantidad actual',
+      icon: 'warning',
+      width: '20%',
+      background: 'ligthgray',
+      backdrop: true,
+      timer: 4000,
+      showConfirmButton: false,
+    });
+  };
 
   const totalItemsCart = () => {
     let qtys = carlist.map((item) => item.qtyProd);
@@ -51,9 +64,7 @@ const CartContextProvider = ({ children }) => {
         },
       ]);
     } else {
-      alert(
-        'el producto se encuentra en el carrito se sumara a la cantidad actual'
-      );
+      alreadyExist();
       itemInCart.qtyProd += qty;
       setCarlist([...carlist]);
     }

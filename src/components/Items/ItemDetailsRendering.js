@@ -3,13 +3,27 @@ import { useState, useContext } from 'react';
 import ItemCounter from '../ItemCounter/ItemCounter';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
+import Swal from 'sweetalert2';
 
 const ItemDetailsRendering = ({ item }) => {
   const [counterData, setCounterData] = useState(0);
   const context = useContext(CartContext);
 
+  const addedToCart = (qty) => {
+    Swal.fire({
+      text: 'agregando ' + qty + ' items al carrito',
+      icon: 'success',
+      width: '20%',
+      background: 'ligthgray',
+      timer: 3000,
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+    });
+  };
+
   const onAdd = (qty) => {
-    alert('agregando ' + qty + ' items al carrito');
+    addedToCart(qty);
     setCounterData(qty);
     context.addToCart(item, qty);
   };
@@ -36,11 +50,14 @@ const ItemDetailsRendering = ({ item }) => {
           {counterData === 0 ? (
             <ItemCounter onAdd={onAdd} initial={0} stock={10} />
           ) : (
-            <Link to='/cart'>
-              <button className='btn btn-danger checkout'>
-                Finalizar Compra
-              </button>
-            </Link>
+            <>
+              <ItemCounter onAdd={onAdd} initial={0} stock={10} />
+              <Link to='/cart'>
+                <button className='btn btn-danger endBuy'>
+                  Finalizar Compra
+                </button>
+              </Link>
+            </>
           )}
         </ul>
       </div>
