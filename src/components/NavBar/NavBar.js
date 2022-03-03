@@ -8,7 +8,7 @@ function NavBar() {
     <>
       <nav className='navbar navbar-expand-lg navbar-dark bg-theme'>
         <div className='container-fluid'>
-          <Link to='/' className='logo'>
+          <Link to='home/' className='logo'>
             <p>
               <strong>Electro-Store</strong>
             </p>
