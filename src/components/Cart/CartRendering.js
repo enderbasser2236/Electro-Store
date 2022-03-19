@@ -31,7 +31,7 @@ const CartRendering = ({ items }) => {
             onClick={() => {
               context.deleteItem(items.idProd);
             }}>
-            X
+            Quitar
           </button>
         </div>
       </li>

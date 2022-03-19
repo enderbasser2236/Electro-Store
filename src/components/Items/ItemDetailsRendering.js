@@ -30,36 +30,41 @@ const ItemDetailsRendering = ({ item }) => {
 
   return (
     <>
-      <div className='itemDetailSizeLeft'>
-        <img src={item.img} alt={item.descripcion}></img>
-      </div>
-      <div className='itemDetailSizeRight'>
-        <div>
-          <h5>{item.descripcion}</h5>
+      <div className='row'>
+        <div className='col-lg-6 align-items-start imgDetail'>
+          <img
+            className='imgDetailInside'
+            src={item.img}
+            alt={item.descripcion}></img>
         </div>
-        <ul className='list-group-flush'>
-          <li className='list-group-item'>
-            <strong>Marca: {item.marca}</strong>
-          </li>
-          <li className='list-group-item'>
-            <strong>Modelo: {item.modelo}</strong>
-          </li>
-          <li className='list-group-item'>
-            <strong>Precio: {item.precio}</strong>
-          </li>
-          {counterData === 0 ? (
-            <ItemCounter onAdd={onAdd} initial={0} stock={10} />
-          ) : (
-            <>
+        <div className='col-lg-6 align-items-start textDetail'>
+          <div>
+            <h5>{item.descripcion}</h5>
+          </div>
+          <ul className='list-group-flush'>
+            <li className='list-group-item'>
+              <strong>Marca: {item.marca}</strong>
+            </li>
+            <li className='list-group-item'>
+              <strong>Modelo: {item.modelo}</strong>
+            </li>
+            <li className='list-group-item'>
+              <strong>Precio: {item.precio}</strong>
+            </li>
+            {counterData === 0 ? (
               <ItemCounter onAdd={onAdd} initial={0} stock={10} />
-              <Link to='/cart'>
-                <button className='btn btn-danger endBuy'>
-                  Finalizar Compra
-                </button>
-              </Link>
-            </>
-          )}
-        </ul>
+            ) : (
+              <>
+                <ItemCounter onAdd={onAdd} initial={0} stock={10} />
+                <Link to='/cart'>
+                  <button className='btn btn-danger endBuy'>
+                    Finalizar Compra
+                  </button>
+                </Link>
+              </>
+            )}
+          </ul>
+        </div>
       </div>
     </>
   );

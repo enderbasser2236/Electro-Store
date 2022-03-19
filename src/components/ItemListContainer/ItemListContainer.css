@@ -29,7 +29,6 @@
     padding-top: 50px;
 }
 
-.row img {
-    width: 318px;
-    height: 318px;
+.imageList {
+    width: 100%;
 }

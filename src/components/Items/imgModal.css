@@ -11,7 +11,7 @@
 
 /* Make the image to responsive */
 .image {
-    display: block;
+
     width: 100%;
     height: auto;
 }

@@ -4,11 +4,11 @@ import '../Items/imgModal.css';
 
 const itemsListRendering = ({ prod }) => {
   return (
-    <div className='col-sm-4' style={{ padding: '20px' }}>
+    <div className='col align-self-start' style={{ padding: '20px' }}>
       <div className='card container' style={{ width: '20rem' }}>
         <img
           src={prod.img}
-          className='card-img-top image'
+          className='card-img-top imageList'
           alt={prod.descripcion}></img>
         <Link to={`/item/${prod.id}`}>
           <div className='overlay'>Detalles.</div>

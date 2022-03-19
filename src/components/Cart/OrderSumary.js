@@ -40,26 +40,28 @@ const OrderSumary = () => {
   };
 
   return (
-    <div className='cartOrder'>
-      <h3>Resumen de su Orden</h3>
-      <p>
-        <strong>Subtotal:</strong>
-        <br></br>
-        {context.calcTotal()}
-      </p>
-      <p>
-        <strong>Shipping: </strong>
-        FREE!!
-      </p>
-      <p>
-        <strong>TOTAL: </strong>
-        <br></br>
-        {context.calcTotal()}
-      </p>
-      <div>
-        <button className='btn btn-warning checkOut' onClick={createOrder}>
-          CheckOut
-        </button>
+    <div className='col-lg-3  containerOrder'>
+      <div className='cartOrder'>
+        <h3>Resumen de su Orden</h3>
+        <p>
+          <strong>Subtotal:</strong>
+          <br></br>
+          {context.calcTotal()}
+        </p>
+        <p>
+          <strong>Shipping: </strong>
+          FREE!!
+        </p>
+        <p>
+          <strong>TOTAL: </strong>
+          <br></br>
+          {context.calcTotal()}
+        </p>
+        <div>
+          <button className='btn btn-warning checkOut' onClick={createOrder}>
+            CheckOut
+          </button>
+        </div>
       </div>
     </div>
   );

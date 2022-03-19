@@ -1,7 +1,9 @@
 .cartDiv {
     padding: 50px;
-    display: inline-block;
-    width: 60%;
+    text-align: center;
+
+
+
 }
 
 
@@ -11,22 +13,18 @@
     height: 100px;
 }
 
-.cartList {
-    display: inline-block;
-}
 
 .cartOrder {
-    display: inline-block;
     text-align: center;
-    width: 20%;
-    margin-left: 50px;
-    top: 20%;
-    right: 10%;
-
-    position: absolute;
     border: solid 2px cornflowerblue;
     border-radius: 10%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.containerOrder {
+    text-align: center;
 }
 
 li div {
@@ -42,9 +40,11 @@ li div {
 }
 
 .cartClear {
-    position: absolute;
+    padding-top: 50px;
     padding-bottom: 100px;
-    left: 100px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .emptyCart {
