@@ -18,7 +18,7 @@ const CartRendering = ({ items }) => {
           {items.qtyProd}
         </div>
         <div>
-          <strong>Precio Unitario : </strong>
+          <strong>Precio: </strong>
           {items.priceProd}
         </div>
         <div>

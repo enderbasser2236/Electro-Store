@@ -15,6 +15,7 @@
 
 
 .cartOrder {
+    padding: 10px;
     text-align: center;
     border: solid 2px cornflowerblue;
     border-radius: 10%;

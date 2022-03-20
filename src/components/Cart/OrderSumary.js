@@ -40,7 +40,7 @@ const OrderSumary = () => {
   };
 
   return (
-    <div className='col-lg-3  containerOrder'>
+    <div className='col-md-3  containerOrder'>
       <div className='cartOrder'>
         <h3>Resumen de su Orden</h3>
         <p>

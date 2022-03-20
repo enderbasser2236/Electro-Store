@@ -16,7 +16,7 @@ const Cart = () => {
   return cartItems.length > 0 ? (
     <>
       <div className='row'>
-        <div className='col-lg-9 align-items-start cartDiv '>
+        <div className='col-md-9 align-items-start cartDiv '>
           <ol>{cartRendering}</ol>
         </div>
         <OrderSumary />
@@ -36,7 +36,7 @@ const Cart = () => {
     <>
       <h1 className='emptyCart'>Su carrito esta vacio</h1>
       <div className='emptyCartButton'>
-        <Link to='/'>
+        <Link to='/Electro-Store/'>
           <button className=' btn btn-outline-primary'>
             Regresar al inicio
           </button>
