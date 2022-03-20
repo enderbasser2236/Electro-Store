@@ -7,7 +7,9 @@ const ItemList = ({ itemRender }) => {
   ));
 
   return stockList.length > 0 ? (
-    <div className='row'>{stockList}</div>
+    <div className='container-fluid'>
+      <div className='row'>{stockList}</div>
+    </div>
   ) : (
     <h1>Cargando...</h1>
   );

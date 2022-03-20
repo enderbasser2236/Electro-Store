@@ -10,7 +10,6 @@ const CartContextProvider = ({ children }) => {
     Swal.fire({
       text: 'el producto se encuentra en el carrito se sumara a la cantidad actual',
       icon: 'warning',
-      width: '20%',
       background: 'ligthgray',
       backdrop: true,
       timer: 4000,

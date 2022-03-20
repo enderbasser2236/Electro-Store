@@ -13,7 +13,6 @@ const ItemDetailsRendering = ({ item }) => {
     Swal.fire({
       text: 'agregando ' + qty + ' items al carrito',
       icon: 'success',
-      width: '20%',
       background: 'ligthgray',
       timer: 3000,
       toast: true,

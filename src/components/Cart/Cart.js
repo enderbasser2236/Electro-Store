@@ -15,11 +15,13 @@ const Cart = () => {
 
   return cartItems.length > 0 ? (
     <>
-      <div className='row'>
-        <div className='col-md-9 align-items-start cartDiv '>
-          <ol>{cartRendering}</ol>
+      <div className='container-fluid'>
+        <div className='row'>
+          <div className='col-md-9 align-items-start cartDiv '>
+            <ol>{cartRendering}</ol>
+          </div>
+          <OrderSumary />
         </div>
-        <OrderSumary />
       </div>
 
       <div className='cartClear'>
