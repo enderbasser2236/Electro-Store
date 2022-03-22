@@ -24,17 +24,25 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
       <div className='ItemCounter'>
         <h4>{counter}</h4>
 
-        <button className='btn btn-primary' onClick={disminuirStock}>
+        <button
+          className='btn  btn-outline-danger itemCounterBtn'
+          onClick={disminuirStock}>
           -1
         </button>
-        <button className='btn btn-primary' onClick={resetStock}>
+        <button
+          className='btn btn-outline-dark itemCounterBtn'
+          onClick={resetStock}>
           Reset
         </button>
-        <button className='btn btn-primary' onClick={aumentarStock}>
+        <button
+          className='btn btn-outline-warning itemCounterBtn'
+          onClick={aumentarStock}>
           +1
         </button>
         <div>
-          <button className='btn btn-primary' onClick={() => onAdd(counter)}>
+          <button
+            className='btn btn-outline-success itemCounterBtn'
+            onClick={() => onAdd(counter)}>
             Agregar al Carrito
           </button>
         </div>

@@ -8,7 +8,18 @@ const CartContextProvider = ({ children }) => {
 
   const alreadyExist = () => {
     Swal.fire({
-      text: 'el producto se encuentra en el carrito se sumara a la cantidad actual',
+      text: 'El producto se encuentra en el carrito se sumara a la cantidad actual',
+      icon: 'warning',
+      background: 'ligthgray',
+      backdrop: true,
+      timer: 4000,
+      showConfirmButton: false,
+    });
+  };
+
+  const itemEmpty = () => {
+    Swal.fire({
+      text: 'Debe añadir por lo menos 1 item al carrito',
       icon: 'warning',
       background: 'ligthgray',
       backdrop: true,
@@ -49,23 +60,28 @@ const CartContextProvider = ({ children }) => {
 
   const addToCart = (item, qty) => {
     const itemInCart = carlist.find((prod) => prod.idProd === item.id);
-    if (itemInCart === undefined) {
-      setCarlist([
-        ...carlist,
-        {
-          idProd: item.id,
-          imgProd: item.img,
-          nameProd: item.descripcion,
-          brandProd: item.marca,
-          modelProd: item.modelo,
-          priceProd: item.precio,
-          qtyProd: qty,
-        },
-      ]);
+    console.log(qty);
+    if (qty > 0) {
+      if (itemInCart === undefined) {
+        setCarlist([
+          ...carlist,
+          {
+            idProd: item.id,
+            imgProd: item.img,
+            nameProd: item.descripcion,
+            brandProd: item.marca,
+            modelProd: item.modelo,
+            priceProd: item.precio,
+            qtyProd: qty,
+          },
+        ]);
+      } else {
+        alreadyExist();
+        itemInCart.qtyProd += qty;
+        setCarlist([...carlist]);
+      }
     } else {
-      alreadyExist();
-      itemInCart.qtyProd += qty;
-      setCarlist([...carlist]);
+      itemEmpty();
     }
   };
 
